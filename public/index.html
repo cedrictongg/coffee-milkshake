@@ -45,6 +45,7 @@ th {
                 </th>
             </thead>
             <tbody>
+                <!-- filters for only type edu -->
                 <tr ng-repeat="edu in resumedb | filter: type='edu'">
                     <td class="col-md-4 text-left">{{edu.school}}</td>
                     <td class="col-md-4 text-center">{{edu.degree}}</td>
@@ -61,6 +62,7 @@ th {
             </thead>
             <tbody>
               <!-- https://stackoverflow.com/questions/18349943/how-to-append-items-to-the-same-row-or-line-with-ng-repeat -->
+              <!-- filters for only type skill -->
                 <tr ng-repeat="skill in resumedb | filter: type='skill'" style="float:left">
                     <td>{{skill.skill}}</td>
                     <td>&nbsp;</td>
@@ -74,6 +76,7 @@ th {
                 </th>
             </thead>
             <tbody>
+                <!-- filters for only type projects -->
                 <tr ng-repeat="project in resumedb | filter: type='project'">
                     <td class="col-md-2">{{project.title}}</td>
                     <td>{{project.description}}</td>
