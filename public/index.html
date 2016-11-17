@@ -1,0 +1,104 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<title>Cedric Tong Resume</title>
+
+<!-- Future references:
+https://docs.angularjs.org/api/ng/directive/ngRepeat
+https://docs.angularjs.org/api/ng/filter/filter -->
+
+<style>
+body {
+  background-image: url(http://www.pixelstalk.net/wp-content/uploads/2016/04/Black-minimalist-minimalistic-HD-wallpapers.jpg);
+  background-size: cover;
+  color: white;
+  padding-right: 300px;
+}
+th {
+  color: #DDBA5E;
+}
+</style>
+
+<body>
+    <div class="container" ng-controller="AppCtrl">
+        <div class="col-md-4 text-left">
+            <h4>(626) 231-6782</h4>
+            <h4>Los Angeles, CA</h4>
+        </div>
+        <div class="col-md-4 text-center">
+            <h1><b>Cedric Tong</b></h1>
+        </div>
+        <div class="col-md-4 text-right">
+            <h4>cedrictongg@gmail.com</h4>
+            <h4>github.com/cedrictongg</h4>
+        </div>
+        <table class="table">
+            <thead>
+                <th>
+                    <h2>Education</h2>
+                </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="edu in resumedb | filter: type='edu'">
+                    <td class="col-md-4 text-left">{{edu.school}}</td>
+                    <td class="col-md-4 text-center">{{edu.degree}}</td>
+                    <td class="col-md-4 text-right">{{edu.last_year}}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <th>
+                    <h2>Skills</h2>
+                </th>
+            </thead>
+            <tbody>
+              <!-- https://stackoverflow.com/questions/18349943/how-to-append-items-to-the-same-row-or-line-with-ng-repeat -->
+                <tr ng-repeat="skill in resumedb | filter: type='skill'" style="float:left">
+                    <td>{{skill.skill}}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <th>
+                    <h2>Projects</h2>
+                </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="project in resumedb | filter: type='project'">
+                    <td class="col-md-2">{{project.title}}</td>
+                    <td>{{project.description}}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <th>
+                    <h2>Extracurricular</h2>
+                </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="extra in resumedb | filter: type='extra'">
+                    <td class="col-md-4 text-left">{{extra.title}}</td>
+                    <td>{{extra.description}}</td>
+                    <td class="text-right">{{extra.date}}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+</body>
+
+</html>
