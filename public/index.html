@@ -14,15 +14,16 @@ https://docs.angularjs.org/api/ng/directive/ngRepeat
 https://docs.angularjs.org/api/ng/filter/filter -->
 
 <style>
-body {
-  background-image: url(http://www.pixelstalk.net/wp-content/uploads/2016/04/Black-minimalist-minimalistic-HD-wallpapers.jpg);
-  background-size: cover;
-  color: white;
-  padding-right: 300px;
-}
-th {
-  color: #DDBA5E;
-}
+    body {
+        background-image: url(http://www.pixelstalk.net/wp-content/uploads/2016/04/Black-minimalist-minimalistic-HD-wallpapers.jpg);
+        background-size: cover;
+        color: white;
+        padding-right: 300px;
+    }
+
+    th {
+        color: #DDBA5E;
+    }
 </style>
 
 <body>
@@ -38,11 +39,11 @@ th {
             <h4>cedrictongg@gmail.com</h4>
             <h4>github.com/cedrictongg</h4>
         </div>
+
         <table class="table">
+
             <thead>
-                <th>
-                    <h2>Education</h2>
-                </th>
+                  <th><h2>Education</h2></th>
             </thead>
             <tbody>
                 <!-- filters for only type edu -->
@@ -61,8 +62,8 @@ th {
                 </th>
             </thead>
             <tbody>
-              <!-- https://stackoverflow.com/questions/18349943/how-to-append-items-to-the-same-row-or-line-with-ng-repeat -->
-              <!-- filters for only type skill -->
+                <!-- https://stackoverflow.com/questions/18349943/how-to-append-items-to-the-same-row-or-line-with-ng-repeat -->
+                <!-- filters for only type skill -->
                 <tr ng-repeat="skill in resumedb | filter: type='skill'" style="float:left">
                     <td>{{skill.skill}}</td>
                     <td>&nbsp;</td>
